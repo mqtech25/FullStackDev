@@ -18,6 +18,6 @@ Computer network fundamentals include the hardware, software, protocols, and con
 The Open Systems Interconnection model is a conceptual framework that standardizes the different components required for network communication between various devices by dividing them into distinct layers, allowing different systems to communicate effectively with each other using standard protocols.
 
 **OSI model layers:**
-![This image for osi model layer](https://github.com/mqtech25/FullStackDev/images/network_osi_model1.webp)
+![This image for osi model layer](https://github.com/mqtech25/FullStackDev/images/network_osi_model1.png)
 
-![This image for osi model layer](https://github.com/mqtech25/FullStackDev/images/network_osi_model.png)
+![This image for osi model layer](https://github.com/mqtech25/FullStackDev/blob/main/images/network_osi_model.png)
