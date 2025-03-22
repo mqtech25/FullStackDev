@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css3 Grid</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            box-sizing: border-box;
+        }
+        .grid{
+            display: grid;
+            grid-template-rows: repeat(4,1fr);
+            grid-template-columns: repeat(5,1fr);
+            background-color: rgb(255, 255, 255);
+            width: 100vw;
+            height: 100vh;
+            gap: 8px;
+        }
+        
+        .box{
+            background: #000;
+            color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        #box1{
+            grid-row:span 2;
+        }
+        #box2{
+            grid-column:span 2;
+        }
+        #box3{
+            grid-column:span 2;
+        }
+        #box4{
+            grid-row:span 2;
+        }
+        #box5{
+            grid-row:span 2;
+            grid-column:span 2;
+        }
+        #box6{
+            grid-row:span 3;
+        }
+        #box7{
+            grid-row:span 2;
+        }
+        #box8{
+            grid-column:span 2;
+        }
+        .box_text{
+            display: none;
+        }
+        .grid_img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="box" id="box1">
+            <img src="./assets/andrei-r-popescu-VPqQlhTNaL8-unsplash.jpg" alt="" class="grid_img">
+            <div class="box_text">
+                box1
+            </div>
+        </div>
+        <div class="box" id="box2">
+            <img src="./assets/bennie-bates-YAsH6mUQLr0-unsplash.jpg" alt="" class="grid_img">
+            <div class="box_text">
+                box2
+            </div>
+        </div>
+        <div class="box" id="box3">
+            <img src="./assets/chamfjord-iFJElEJwcnQ-unsplash.jpg" alt="" class="grid_img">
+            <div class="box_text">
+                box3
+            </div>
+        </div>
+        <div class="box" id="box4">
+            <img src="./assets/david-villasana-WC_ObWvPheI-unsplash.jpg" alt="" class="grid_img">
+            <div class="box_text">
+                box4
+            </div>
+        </div>
+        <div class="box" id="box5">
+            <img src="./assets/jacek-janiczak-L1y1yo1Q_ZQ-unsplash.jpg" alt="" class="grid_img">
+            <div class="box_text">
+                box5
+            </div>
+        </div>
+        <div class="box" id="box6">
+            <img src="./assets/nicolas-meunier-ygvDiK9dBdI-unsplash.jpg" alt="" class="grid_img">
+            <div class="box_text">
+                box6
+            </div>
+        </div>
+        <div class="box" id="box7">
+            <img src="./assets/shushan-meloyan-3s7k1IPGfrg-unsplash.jpg" alt="" class="grid_img">
+            <div class="box_text">
+                box7
+            </div>
+        </div>
+        <div class="box" id="box8">
+            <img src="./assets/the-chaffins-reWJ2ugmpw8-unsplash.jpg" alt="" class="grid_img">
+            <div class="box_text">
+                box8
+            </div>
+        </div>
+        <div class="box" id="box9">
+            <img src="./assets/tom-def-wZ4vdWc0Aug-unsplash.jpg" alt="" class="grid_img">
+            <div class="box_text">
+                box9
+            </div>
+        </div>
+    </div>
+</body>
+</html>
