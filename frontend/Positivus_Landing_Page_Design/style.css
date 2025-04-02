@@ -300,7 +300,7 @@ transition: 0.3s all;
     background: var(--mainPrimaryGreenColor);
 }
 .service_card.green_card .service_card_title {
-    background: var(--white)
+    background: var(--white);
 }
 .service_card.dark_card{
     background: var(--mainPrimaryDarkColor);
