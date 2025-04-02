@@ -234,27 +234,89 @@ margin-bottom: 32px;
 .service_cards{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
-    gap: 20px;
+    gap: 5%;
 }
 .service_card{
     display: flex ;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 30px;
+    margin-bottom: 3%;
+    min-height: 200px;
     border-radius: 45px;
     border:1px solid var(--black);
     box-shadow: 0px 5px 0 0 var(--mainPrimaryDarkColor);
 }
-.service_card.grey_card{
-    background: var(--mainPrimaryGrayColor);
+.service_card .service_card_left_side{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
+
 .service_card_right_side_img {
     max-width: 210px;
     width: 100%;
 }
-  
+.service_card.grey_card{
+    background: var(--mainPrimaryGrayColor);
+}
+.service_card.grey_card .service_card_title {
+    background: var(--mainPrimaryGreenColor)
+}
+.service_card_link {
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    width: max-content;
+}
+.service_card_link .icon {
+    background: var(--mainPrimaryDarkColor);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.service_card_link .icon {
+transition: 0.3s all;
+}
+ .service_card_link:hover .icon {
+    transform: rotateZ(30deg);
+}
+.service_card_link .icon img {
+    width: 18px;
+}
+.service_card.green_card{
+    background: var(--mainPrimaryGreenColor);
+}
+.service_card.green_card .service_card_title {
+    background: var(--white)
+}
+.service_card.dark_card{
+    background: var(--mainPrimaryDarkColor);
+}
+.service_card.dark_card .service_card_title {
+    background: var(--white)
+}
+.service_card.dark_card  .service_card_link .icon {
+    background: var(--white);
+}
+.service_card.dark_card  .service_card_link .icon img {
+    filter: brightness(0) saturate(100%)
+}
+.service_card.dark_card  .service_card_link{
+    color: var(--white);
+}
 
 /* responive */
 
@@ -328,6 +390,9 @@ margin-bottom: 32px;
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
+    }
+    .service_card{
+        margin-bottom: 6%;
     }
 }
 @media screen and (max-width:430px){
