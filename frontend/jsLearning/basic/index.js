@@ -96,28 +96,63 @@ console.log([10,20,30].shift());
 
 // 4️⃣ What does `[1, 2, 3].shift()` do?
 // Ans: remove first char from  orginal Array and return first char;
+    console.log([1,2,3].shift());
 
 // 5️⃣ How can you add `0` at the beginning of `[1, 2, 3]`?
+// Ans: there is two method one unshift and second sperad operator
+    let arr = [1, 2, 3];
+    arr.unshift(0);
+    console.log(arr);
+
+    let arrX = [1,2,3];
+    let newArrX = [0 , ...arrX]
+
+    console.log(newArrX);
+
 
 // 6️⃣ What is the result of `[1, 2].concat([3, 4])`?
+// Ans: add two array
+console.log([1,2].concat([3,4])); 
+
 
 // 7️⃣ How do you reverse `[1, 2, 3]`?
+// Ans: By using reverse function
+    console.log([1,2,3].reverse());
 
 // 8️⃣ What will `[3, 1, 4, 2].sort()` return?
+// Ans: sort will arrange by alpha or number
+    console.log([3,1,4,2].sort());
 
 // 9️⃣ How to join `['a', 'b', 'c']` into `"a-b-c"`?
+// Ans: by using join function convert array to string
+    console.log(['a','b','c'].join('-'));
 
 // 🔟 What does `['x', 'y', 'z'].indexOf('y')` return?
+// Ans: find index of array element
+    console.log(['x','y','z'].indexOf('y'));
 
 // 1️⃣1️⃣ What’s the output of `[1, 2, 3].includes(2)`?
+// Ans: its return True if find element
+    console.log([1,2,3].includes(2));
 
 // 1️⃣2️⃣ What does `[1, 2, 3, 4].slice(1, 3)` return?
+// Ans: Its remove slice element from array and return array with remain element
+    console.log([1, 2, 3, 4].slice(1, 3));
 
 // 1️⃣3️⃣ How to remove 2 elements from `[10, 20, 30, 40]` starting at index 1?
+// Ans: by using splice function remove element from orginal array
+let arrayZ = [10, 20, 30, 40];
+ arrayZ.splice(0,2)
+    console.log(arrayZ);
 
 // 1️⃣4️⃣ What is the result of `[1, 2, 3].map(x => x * 2)`?
+// Ans: its multiplay all array element with 2 and return array with new elements
+// Map => The Array.map() method allows you to iterate over an array and modify its elements using a callback function.
+    console.log([1,2,3].map(x => x*2));
 
 // 1️⃣5️⃣ What will `[1, 2, 3].filter(x => x > 1)` return?
-
+// Ans: its return [2,3]
+// The filter() method returns a new array with all elements that pass the test defined by the given function.
+console.log([1,2,3].filter(x => x>1));
 // --- //
 
