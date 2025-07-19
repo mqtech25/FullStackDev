@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <style>
+        .todo-card:hover {
+            box-shadow: 0 8px 25px hsl(240 21% 10% / .4);
+            transform: translateY(-2px);
+        }
+       #statesCardWrapper li {
+            user-select: none; 
+            touch-action: none;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-950">
+    <main class="min-h-screen p-4 sm:p-6 lg:p-8">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4 text-white text-center">
+            Todo App
+        </h1>
+        <p class="text-lg text-white  text-center">Stay organized and get things done
+
+        </p>
+        <div class="max-w-2xl mx-auto">
+            <div class="rounded-lg border-0 bg-neutral-200 p-5 group shadow-sm todo-card my-6">
+                <div class="flex gap-3 ">
+                    <input type="text" name="userInput" id="userInput" placeholder="Add a new task..."
+                        class="flex h-10 w-full rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2  md:text-sm flex-1 bg-secondary border-border">
+
+
+                    <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-3xl ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2  bg-sky-400 text-white hover:bg-sky-600 h-10 px-4 py-2 todo-button-sky-400 disabled:opacity-20" id="plusBtn"
+                        disabled>
+                        +
+                    </button>
+                </div>
+            </div>
+            <div class="rounded-lg border bg-neutral-300 bg-opacity-5 shadow-sm todo-card text-center py-12 px-4 data-[listempty=true]:block data-[listempty=false]:hidden"  id="noTaskCard" data-listempty="true">
+                No tasks yet. Add one above!
+            </div>
+            <div class="flex flex-col gap-2 shadow-sm todo-fade-in" id="taskWrap">
+             
+            </div>
+        </div>
+        <ol
+            class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px] " id="statesCardWrapper">
+       
+        </ol>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

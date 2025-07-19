@@ -156,3 +156,26 @@ let arrayZ = [10, 20, 30, 40];
 console.log([1,2,3].filter(x => x>1));
 // --- //
 
+// New Practice Question
+
+// Qs1. Write a JS program to delete all occurrences of element ‘num’ in a given array.
+// Example : if arr = [1, 2, 3, 4, 5, 6, 2, 3] & num = 2
+
+let arrayX = [1, 2, 3, 4, 5, 6, 2, 3]
+let numRemove = 2;
+for (let i = 0; i < arrayX.length; i++) {
+    const element = arrayX[i];
+    if(element== numRemove){
+        arrayX.splice(i,1)
+    }
+}
+console.log('new practice question');
+console.log(arrayX);
+
+// Qs2. Write a JS program to find the no of digits in a number.
+// Example : if number = 287152, count = 6
+
+let numberX = '287152';
+
+
+console.log(Number(numberX));
