@@ -14,6 +14,21 @@
             user-select: none; 
             touch-action: none;
         }
+        .todoItem[data-status="completed"]{
+            background: #b9f8cf;
+        }
+        .todoItem[data-status="completed"] #completeTask {
+            pointer-events: none;
+        }
+        .todoItem[data-status="completed"] #completeTask  svg{
+            fill: var(--color-green-500);
+        }
+        .todoItem[data-status="completed"] div#updateWraper  div#listText{
+            text-decoration: line-through;
+        }
+        .todoItem[data-status="completed"] #editTask{
+            display: none;
+        }
     </style>
 </head>
 
@@ -26,6 +41,17 @@
 
         </p>
         <div class="max-w-2xl mx-auto">
+            <div class="flex gap-3">
+                <div class="flex-1 rounded-lg bg-neutral-200 shadow-sm todo-card my-6 p-5 text-center">
+                    <p class="text-2xl font-bold text-sky-400" id="activeTask">0</p>
+                    <p class="card-title">Active Tasks</p>
+                </div>
+                <div class="flex-1 rounded-lg bg-neutral-200 shadow-sm todo-card my-6 p-5 text-center">
+                    <p class="text-2xl font-bold text-green-500" id="completedTask">0</p>
+                    <p class="card-title">Completed</p>
+                </div>
+            </div>
+
             <div class="rounded-lg border-0 bg-neutral-200 p-5 group shadow-sm todo-card my-6">
                 <div class="flex gap-3 ">
                     <input type="text" name="userInput" id="userInput" placeholder="Add a new task..."
@@ -39,6 +65,60 @@
                     </button>
                 </div>
             </div>
+<div class="flex items-center gap-2 my-4">
+   
+    <button
+      class="cursor-pointer bg-white relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#00bcff] h-9 todo-card rounded-md px-3 data-[active=true]:bg-[#00bcff] data-[active=true]:text-[#fff] data-[active=true]:[&_svg]:stroke-[#fff] " id="allFilterBtn" data-active="false">
+      <svg width="24" height="24" class="lucide lucide-rocket text-cyan-500 dark:text-cyan-400"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="2"
+      stroke="#00bcff"
+      fill="none"stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="18" x2="20" y2="18" />
+      </svg>
+      All
+    </button>
+    <button
+      class="cursor-pointer bg-white relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#60A5FA] h-9 todo-card rounded-md px-3 data-[active=true]:bg-[#60A5FA] data-[active=true]:text-[#fff] data-[active=true]:[&_svg]:stroke-[#fff]" id="activeFilterBtn" data-active="false">
+      <svg
+        class="lucide lucide-newspaper text-blue-400 dark:text-blue-600"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        stroke-width="2"
+        stroke="#60A5FA"
+        fill="none"
+        viewBox="0 0 24 24"
+        height="22"
+        width="22"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
+        ></path>
+        <path d="M18 14h-8"></path>
+        <path d="M15 18h-5"></path>
+        <path d="M10 6h8v4h-8V6Z"></path>
+      </svg>
+      Active
+    </button>
+    <button
+      class="cursor-pointer bg-white relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#00c951] h-9 todo-card rounded-md px-3 data-[active=true]:bg-[#00c951] data-[active=true]:text-[#fff] data-[active=true]:[&_svg]:stroke-[#fff] " id="completedFilterBtn" data-active="false">
+    
+      <svg width="24" height="24"  class="lucide lucide-rocket text-cyan-500 dark:text-cyan-400"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="2"
+      stroke="#00c951"
+      fill="none"stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12" />
+      </svg>
+      Completed
+    </button>
+  </div>
+  
             <div class="rounded-lg border bg-neutral-300 bg-opacity-5 shadow-sm todo-card text-center py-12 px-4 data-[listempty=true]:block data-[listempty=false]:hidden"  id="noTaskCard" data-listempty="true">
                 No tasks yet. Add one above!
             </div>
