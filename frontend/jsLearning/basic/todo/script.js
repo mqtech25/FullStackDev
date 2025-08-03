@@ -157,9 +157,11 @@ function attachEventListeners(todoListItem) {
               }
     });
 
+   if(editBtn!=null){
     editBtn.addEventListener('click', () => {
         updateFunc(todoListItem);
     });
+   }
 
     completeTaskBtn.addEventListener('click', () => {
         let completedlistID=todoListItem.getAttribute('list_id');
@@ -173,7 +175,13 @@ function attachEventListeners(todoListItem) {
         // todoListItem.remove();
         statesCardWrapper.append(completedCard);
         completedCard.setAttribute('data-state', 'open');
-        rendorDomument();
+        
+        if(activeFilterBtn.getAttribute('data-active')=='true'){
+            activeFilterDoc()
+        }else{
+            rendorDomument();
+        }
+
         setTimeout(() => {
             completedCard.setAttribute('data-state', 'closed');
             statesCardWrapper.innerHTML = ''
@@ -363,8 +371,8 @@ function rendorDomument(){
 
     if(!localStorage.length){
   noTask.setAttribute('data-listempty','true');
-  activeTask.innerText='0'
-  completedTask.innerText='0'
+  activeTask.innerText=0
+  completedTask.innerText=0
     }
 }
 function allFilterDoc() {
@@ -382,6 +390,7 @@ function activeFilterDoc(){
     plusBtn.setAttribute('disabled','true')
     taskWrap.innerHTML='';
     let countActiveTask=0;
+    let countComletedTask=0;
     for (let i = 0; i < localStorage.length; i++) {
         const keyID = localStorage.key(i);
         let keyIDValue = JSON.parse(localStorage.getItem(keyID)); 
@@ -433,16 +442,17 @@ activeTask.innerHTML=countActiveTask;
   taskWrap.append(activeTodoListItem);
   attachEventListeners(activeTodoListItem);
  
+            }else if(keyIDValue.status === 'completed'){
+                completedTask.innerHTML = ++countComletedTask;
             }
-
-            if(countActiveTask==0){
-activeTask.innerHTML=countActiveTask;
-
-                noTask.innerHTML=`No active tasks yet.                `
-                noTask.setAttribute('data-listempty','true');
-            }   
     }
-    
+
+    if(countActiveTask==0){
+        activeTask.innerHTML=0;
+
+        noTask.innerHTML=`No active tasks yet.                `
+        noTask.setAttribute('data-listempty','true');
+    }    
 }
 
 function completedFilterDoc() {
@@ -452,6 +462,7 @@ function completedFilterDoc() {
     userInput.value=""
     plusBtn.setAttribute('disabled','true')
     taskWrap.innerHTML='';
+    let countActiveTask=0;
     let countCompleteTask=0;
     for (let i = 0; i < localStorage.length; i++) {
         const keyID = localStorage.key(i);
@@ -474,17 +485,7 @@ function completedFilterDoc() {
       <div class="text-left" id='listText'>${keyIDValue.todo}</div>
   </div>
   <div class="flex gap-1" id='editDeleteBtn'>
-  
-      <button
-          class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium px-2 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50  hover:bg-sky-400 h-9 rounded-md p-1  hover:text-white" id='editTask'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" class="lucide lucide-pen-line h-4 w-4">
-              <path d="M12 20h9"></path>
-              <path
-                  d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z">
-              </path>
-          </svg></button>
+   
   
       <button
           class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium  px-2 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50  hover:bg-accent h-9 rounded-md p-1 text-muted-foreground hover:bg-red-400 hover:text-white " id='deleteTask'>
@@ -505,14 +506,17 @@ completedTask.innerHTML=countCompleteTask;
   attachEventListeners(completedTodoListItem);
 
 
+            }else if(keyIDValue.status === 'active'){
+                activeTask.innerHTML = ++countActiveTask;
             }
-
-            if(countCompleteTask==0){
-                completedTask.innerHTML=countCompleteTask;
-                noTask.innerHTML=`No completed tasks yet.                `
-                noTask.setAttribute('data-listempty','true');
-            }   
     }
+
+    if(countCompleteTask==0){
+
+            completedTask.innerHTML=0;
+            noTask.innerHTML=`No completed tasks yet.                `
+            noTask.setAttribute('data-listempty','true');
+        } 
 }
 
 allFilterBtn.addEventListener('click',()=>{
