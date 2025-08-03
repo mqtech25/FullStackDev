@@ -308,8 +308,15 @@ function rendorDomument(){
     taskWrap.innerHTML='';
     let activeTaskCount =0;
     let completedTaskCount =0;
-    for (let i = 0; i < localStorage.length; i++) {
-        const localkey = localStorage.key(i);
+     // Get and sort keys numerically (newest first)
+     const keys = [];
+     for (let i = 0; i < localStorage.length; i++) {
+         keys.push(localStorage.key(i));
+     }
+     keys.sort((a, b) => b - a); // Newest first
+
+    for (let i = 0; i < keys.length; i++) {
+        const localkey = keys[i];
       const localkeyValue=  JSON.parse(localStorage.getItem(localkey));
       if(localkeyValue.status == 'completed'){
         completedTaskCount++;
@@ -391,8 +398,14 @@ function activeFilterDoc(){
     taskWrap.innerHTML='';
     let countActiveTask=0;
     let countComletedTask=0;
+    // Get and sort keys numerically (newest first)
+    const keys = [];
     for (let i = 0; i < localStorage.length; i++) {
-        const keyID = localStorage.key(i);
+        keys.push(localStorage.key(i));
+    }
+    keys.sort((a, b) => b - a); // Newest first
+    for (let i = 0; i < keys.length; i++) {
+        const keyID = keys[i];
         let keyIDValue = JSON.parse(localStorage.getItem(keyID)); 
             if(keyIDValue.status==='active'){
                 countActiveTask++;
@@ -464,8 +477,15 @@ function completedFilterDoc() {
     taskWrap.innerHTML='';
     let countActiveTask=0;
     let countCompleteTask=0;
-    for (let i = 0; i < localStorage.length; i++) {
-        const keyID = localStorage.key(i);
+      // Get and sort keys numerically (newest first)
+      const keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+          keys.push(localStorage.key(i));
+      }
+      keys.sort((a, b) => b - a); // Newest first
+ 
+    for (let i = 0; i < keys.length; i++) {
+        const keyID = keys[i];
         let keyIDValue = JSON.parse(localStorage.getItem(keyID)); 
             if(keyIDValue.status==='completed'){
                 countCompleteTask++;
