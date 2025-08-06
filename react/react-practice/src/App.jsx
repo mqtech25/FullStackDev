@@ -1,15 +1,29 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+import { useState } from 'react'
 import './App.css'
 import Card from './compontent/Card'
+import Form from './compontent/Form'
+
 
 function App() {
-  // const [count, setCount] = useState(0)
 
+  // let [count, setCount]= useState(0)
+  
   return (
 
   <>
+  {/* <Form/> */}
+
+  {/* class3 useState*/}
+  {/* <h1 className='text-center'>{count}</h1>
+  <button  className='text-center' onClick={()=>{
+    setCount(count++)
+  }}>Click Here</button> */}
+
+  {/* class2 component props */}
+
   <h1 className='text-center'>What to watch</h1>
   <div className='card-row'>
         <Card imgSrc={'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2172010/capsule_616x353.jpg?t=1750959555'} title={'Until Dawn'} description={'One year after her sister disappeared, Clover and her friends head to the remote valley where she vanished to search for answers.'}/>
