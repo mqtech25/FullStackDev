@@ -5,6 +5,7 @@ import { useState } from 'react'
 import './App.css'
 import Card from './compontent/Card'
 import Form from './compontent/Form'
+import EffectHook from './compontent/EffectHook'
 
 
 function App() {
@@ -14,6 +15,12 @@ function App() {
   return (
 
   <>
+
+  {/* Hooks  */}
+
+  <EffectHook/>
+
+
   {/* <Form/> */}
 
   {/* class3 useState*/}
@@ -24,7 +31,7 @@ function App() {
 
   {/* class2 component props */}
 
-  <h1 className='text-center'>What to watch</h1>
+  {/* <h1 className='text-center'>What to watch</h1>
   <div className='card-row'>
         <Card imgSrc={'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2172010/capsule_616x353.jpg?t=1750959555'} title={'Until Dawn'} description={'One year after her sister disappeared, Clover and her friends head to the remote valley where she vanished to search for answers.'}/>
         <Card imgSrc={'https://westwoodhorizon.com/wp-content/uploads/2020/02/dolittle-universal-1080x793-5e1cc7ac93aa5-1.jpg'} title={'Dolittle'} description={'A physician, who can speak with animals, is summoned by the queen to find a cure for her life-threatening disease.'}/>
@@ -39,7 +46,7 @@ function App() {
         <Card imgSrc={'https://resizing.flixster.com/5M5FCkUD9CjVOVe8bu6aZv9Ffnw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p19885745_v_h9_ac.jpg'} title={`He's All That`} description={`An influencer who specializes in makeovers bets that she can transform an unpopular classmate into a prom king.`}/>
 
         <Card imgSrc={'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3716910/67c9eff9ac6b3075a894fe7a64d0d1a247be13ea/capsule_616x353.jpg?t=1750454362'} title={`The Fog`} description={`When supernatural events occur in their town, Nick and Elizabeth discover that the ghosts of a crew of sailors who were killed in a shipwreck more than 100 years ago have come to exact revenge.`}/>
-    </div>
+    </div> */}
   </>
 
     // <>
