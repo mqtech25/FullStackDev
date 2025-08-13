@@ -7,6 +7,7 @@ import Card from './compontent/Card'
 import Form from './compontent/Form'
 import EffectHook from './compontent/EffectHook'
 import UseMemoExample from './compontent/UseMemo'
+import UseCallbackHook from './compontent/UseCallback'
 
 
 function App() {
@@ -21,8 +22,9 @@ function App() {
 
   {/* <EffectHook/> */}
 
-  <UseMemoExample/>
+  {/* <UseMemoExample/> */}
 
+  <UseCallbackHook/>
 
   {/* <Form/> */}
 
