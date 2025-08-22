@@ -8,6 +8,7 @@ import Form from './compontent/Form'
 import EffectHook from './compontent/EffectHook'
 import UseMemoExample from './compontent/UseMemo'
 import UseCallbackHook from './compontent/UseCallback'
+import { CustomHook } from './compontent/CustomHook'
 
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
 
   {/* <UseMemoExample/> */}
 
-  <UseCallbackHook/>
+  {/* <UseCallbackHook/> */}
+
+  <CustomHook/>
 
   {/* <Form/> */}
 
