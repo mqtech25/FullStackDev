@@ -8,8 +8,8 @@ function Login() {
     const [password,setPassword] = useState('')
   return (
     <>
-        <div className="w-full h-screen bg-slate-200 flex flex-col justify-center items-center">
-            <div className="flex flex-col gap-6 rounded-md w-lg bg-white shadow-md p-5 text-center">
+        <div className="w-full h-screen bg-neutral-100/50  flex flex-col justify-center items-center">
+            <div className="flex flex-col gap-6 rounded-md w-lg bg-white shadow-lg p-5 text-center">
                 <HeadingCP text={"Login"}/>
                 <Inputs type={'email'} value={email}   placeholder={'john@gmail.com'} reqInput={true} onChangeFun={(e)=>{
                      setEmail(e.target.value);
